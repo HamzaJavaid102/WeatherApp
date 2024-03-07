@@ -25,13 +25,21 @@ class WeatherVM: NSObject {
     deinit {
         locationManager.stopUpdatingLocation()
     }
+    
+    func numberOfItems() -> Int {
+        return currentWeather?.forecast?.forecastday?.count ?? 0
+    }
+    
+    func item(at index: Int) -> Forecastday? {
+        return currentWeather?.forecast?.forecastday?[index]
+    }
 }
 
 extension WeatherVM {
     
     func getCurrentWeather(location: String,completion: @escaping(String?) -> Void) {
-        let request = CurrentWeatherRequest(key: Constant.apiKey, q: location)
-        APIClient.shared.request(path: .current(request)) { (result: Result<CurrentWeatherResponse?>) in
+        let request = Next3DaysWeatherRequest(key: Constant.apiKey, q: location, days: "3")
+        APIClient.shared.request(path: .forcast(request)) { (result: Result<CurrentWeatherResponse?>) in
             switch result {
             case .success(let value):
                 guard let data = value else { completion(Constant.Error.noData) ; return}
@@ -42,6 +50,7 @@ extension WeatherVM {
             }
         }
     }
+    
 }
 
 

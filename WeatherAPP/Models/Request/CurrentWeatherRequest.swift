@@ -11,3 +11,9 @@ struct CurrentWeatherRequest: BaseNetworkRequestable {
     let key: String
     let q: String
 }
+
+struct Next3DaysWeatherRequest: BaseNetworkRequestable {
+    let key: String
+    let q: String
+    let days: String
+}

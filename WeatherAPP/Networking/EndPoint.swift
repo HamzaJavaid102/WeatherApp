@@ -9,6 +9,7 @@ import Foundation
 
 enum EndPoint {
     case current(BaseNetworkRequestable)
+    case forcast(BaseNetworkRequestable)
     case uploadImage
 }
 
@@ -18,6 +19,8 @@ extension EndPoint {
         switch self {
         case .current:
             return "current.json"
+        case .forcast:
+            return "forecast.json"
         case .uploadImage:
             return "upload_image"
         }
@@ -25,7 +28,7 @@ extension EndPoint {
     
     var query: [URLQueryItem]? {
         switch self {
-        case .current(let value):
+        case .current(let value), .forcast(let value):
             return value.associatedValues.toURLQueryItem
         default:
             return nil
