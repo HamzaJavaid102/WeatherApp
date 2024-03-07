@@ -85,6 +85,20 @@
                                     <action selector="refreshTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="nXo-pa-MvO"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2MW-Zu-2mO">
+                                <rect key="frame" x="16" y="71" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="30" id="80X-u4-Z27"/>
+                                    <constraint firstAttribute="height" constant="30" id="Ya5-up-v55"/>
+                                </constraints>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="location" catalog="system"/>
+                                <connections>
+                                    <action selector="openGooglePlacesController:" destination="BYZ-38-t0r" eventType="touchUpInside" id="KFg-RE-PRr"/>
+                                    <action selector="refreshTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fmd-kq-uxE"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BNW-dr-K2e">
                                 <rect key="frame" x="16" y="444" width="361" height="0.0"/>
                                 <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="30"/>
@@ -102,7 +116,7 @@
                                 </collectionViewFlowLayout>
                                 <cells/>
                             </collectionView>
-                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Qvs-1E-Wyj">
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="Qvs-1E-Wyj">
                                 <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
                                 <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </activityIndicatorView>
@@ -126,6 +140,7 @@
                             <constraint firstItem="BNW-dr-K2e" firstAttribute="top" secondItem="SXl-Hs-kPL" secondAttribute="bottom" constant="30" id="RCH-eB-RIF"/>
                             <constraint firstItem="SXl-Hs-kPL" firstAttribute="top" secondItem="WxP-iy-0PO" secondAttribute="bottom" constant="12" id="SuI-BP-aMR"/>
                             <constraint firstItem="hDe-rL-VHQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Vzy-In-lRU"/>
+                            <constraint firstItem="2MW-Zu-2mO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="WIj-Vw-1Me"/>
                             <constraint firstItem="wUl-7w-Qdv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="100" id="aGf-Rf-Lez"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="qoy-6R-QmI" secondAttribute="trailing" constant="16" id="avq-6k-3L3"/>
                             <constraint firstItem="BNW-dr-K2e" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="b2p-6g-8Df"/>
@@ -134,6 +149,7 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="SXl-Hs-kPL" secondAttribute="trailing" constant="16" id="dlQ-9I-Csx"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BNW-dr-K2e" secondAttribute="trailing" constant="16" id="fEc-vE-tX0"/>
                             <constraint firstItem="Ur6-9j-myE" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="12" id="gQS-iA-miO"/>
+                            <constraint firstItem="2MW-Zu-2mO" firstAttribute="top" secondItem="qoy-6R-QmI" secondAttribute="top" id="gXz-ye-llk"/>
                             <constraint firstItem="KlN-vm-PBb" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" multiplier="0.3" id="jAA-Ii-1jV"/>
                             <constraint firstItem="wUl-7w-Qdv" firstAttribute="top" secondItem="Ur6-9j-myE" secondAttribute="bottom" constant="12" id="jp2-lP-9Lh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="WxP-iy-0PO" secondAttribute="trailing" constant="16" id="ojk-KU-n30"/>
@@ -172,6 +188,7 @@
     </scenes>
     <resources>
         <image name="arrow.clockwise" catalog="system" width="113" height="128"/>
+        <image name="location" catalog="system" width="128" height="119"/>
         <image name="rain_cloud_sun" width="427" height="428"/>
         <namedColor name="ThemeColor">
             <color red="0.098039215686274508" green="0.76470588235294112" blue="0.98431372549019602" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

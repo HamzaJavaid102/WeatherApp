@@ -7,6 +7,7 @@ target 'WeatherAPP' do
 
   # Pods for WeatherAPP
   pod 'Kingfisher'
+  pod 'GooglePlaces'
   
   target 'WeatherAPPTests' do
     inherit! :search_paths

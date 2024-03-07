@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import GooglePlaces
 
 class TodayWeatherVC: UIViewController {
     
@@ -22,7 +23,11 @@ class TodayWeatherVC: UIViewController {
     @IBOutlet weak var lowtempLbl: UILabel!
     @IBOutlet weak var indicatorView: UIActivityIndicatorView!
     
-    private var currentCity: String?
+    private var currentCity: String? {
+        didSet {
+            getCurrentWeatherData()
+        }
+    }
     
     let viewModel = WeatherVM()
     
@@ -38,21 +43,19 @@ class TodayWeatherVC: UIViewController {
         viewModel.locationUpdateHandler = { location in
             self.currentCity = location
             self.cityNameLbl.text = location
-            self.getCurrentWeatherData()
         }
         
         viewModel.errorUpdateHandler = { errorMessage in
             self.presentAlert(title: Constant.Error.error, message: errorMessage)
+            self.dissmissProgress()
         }
     }
     
     private func getCurrentWeatherData() {
         guard let city = currentCity else { return }
-        indicatorView.isHidden = false
-        indicatorView.startAnimating()
+        ShowProgress()
         self.viewModel.getCurrentWeather(location: city ) { [weak self] errorMessage in
-            self?.indicatorView.isHidden = true
-            self?.indicatorView.stopAnimating()
+            self?.dissmissProgress()
             if let errorMsg = errorMessage {
                 self?.presentAlert(title: Constant.Error.error, message: errorMsg)
                 return;
@@ -77,13 +80,27 @@ class TodayWeatherVC: UIViewController {
         collectionView.reloadData()
     }
     
+    private func dissmissProgress() {
+        indicatorView.isHidden = true
+        indicatorView.stopAnimating()
+    }
     
+    private func ShowProgress() {
+        indicatorView.isHidden = false
+        indicatorView.startAnimating()
+    }
 }
 
 extension TodayWeatherVC {
     
     @IBAction func refreshTapped(_ sender: UIButton) {
         getCurrentWeatherData()
+    }
+    
+    @IBAction func openGooglePlacesController(_ sender: UIButton) {
+        let autocompleteController = GMSAutocompleteViewController()
+        autocompleteController.delegate = self
+        present(autocompleteController, animated: true, completion: nil)
     }
     
 }
@@ -118,5 +135,28 @@ extension TodayWeatherVC: UICollectionViewDelegate, UICollectionViewDataSource, 
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 10.0
+    }
+}
+
+extension TodayWeatherVC: GMSAutocompleteViewControllerDelegate {
+    
+    func viewController(_ viewController: GMSAutocompleteViewController, didAutocompleteWith place: GMSPlace) {
+        self.currentCity = place.name ?? ""
+        self.cityNameLbl.text = place.name ?? ""
+        print("Place name: \(place.name ?? "")")
+        print("Place address: \(place.formattedAddress ?? "")")
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func viewController(_ viewController: GMSAutocompleteViewController, didFailAutocompleteWithError error: Error) {
+        print("Autocomplete error: \(error.localizedDescription)")
+        self.presentAlert(title: Constant.Error.error, message: error.localizedDescription)
+        self.dissmissProgress()
+        dismiss(animated: true, completion: nil)
+    }
+    
+    func wasCancelled(_ viewController: GMSAutocompleteViewController) {
+        self.dissmissProgress()
+        dismiss(animated: true, completion: nil)
     }
 }

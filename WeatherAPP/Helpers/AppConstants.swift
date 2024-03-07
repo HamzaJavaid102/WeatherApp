@@ -11,6 +11,7 @@ import UIKit
 struct Constant {
     
     static let apiKey = "cfb3e31cd13a4e048f052142240603"
+    static let googleApiKey = "AIzaSyDgV5adUU7e1zCP2bBYfhCUetrrgSyF0Ww"
     
     struct Error {
         static let error = "Error"
