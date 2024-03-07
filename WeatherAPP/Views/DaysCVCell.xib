@@ -24,14 +24,14 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="pna-sb-C8X">
                                 <rect key="frame" x="4" y="4" width="55" height="100"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12 Nav" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfU-y0-HOU">
-                                <rect key="frame" x="4" y="124.00000000000001" width="55" height="15.666666666666671"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pfU-y0-HOU">
+                                <rect key="frame" x="4" y="124" width="55" height="0.0"/>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mostly Suny" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zD-v7-fZS">
-                                <rect key="frame" x="4" y="148.66666666666666" width="55" height="31.333333333333343"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zD-v7-fZS">
+                                <rect key="frame" x="4" y="180" width="55" height="0.0"/>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="14"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -44,6 +44,7 @@
                             <constraint firstAttribute="trailing" secondItem="pna-sb-C8X" secondAttribute="trailing" constant="4" id="ALe-1I-Ca4"/>
                             <constraint firstAttribute="trailing" secondItem="pfU-y0-HOU" secondAttribute="trailing" constant="4" id="Gsj-lv-jZI"/>
                             <constraint firstAttribute="trailing" secondItem="0zD-v7-fZS" secondAttribute="trailing" constant="4" id="YC3-Cu-yeS"/>
+                            <constraint firstAttribute="width" constant="150" id="Zrw-Nf-4DU"/>
                             <constraint firstItem="pna-sb-C8X" firstAttribute="top" secondItem="DFq-Vw-M8j" secondAttribute="top" constant="4" id="dam-Bk-eGH"/>
                             <constraint firstItem="pna-sb-C8X" firstAttribute="leading" secondItem="DFq-Vw-M8j" secondAttribute="leading" constant="4" id="jj2-KQ-VC3"/>
                             <constraint firstItem="pfU-y0-HOU" firstAttribute="leading" secondItem="DFq-Vw-M8j" secondAttribute="leading" constant="4" id="mcZ-yH-zDe"/>
@@ -52,7 +53,7 @@
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                <real key="value" value="8"/>
+                                <real key="value" value="0.0"/>
                             </userDefinedRuntimeAttribute>
                             <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
                                 <color key="value" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -61,10 +62,16 @@
                                 <real key="value" value="1"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Zrw-Nf-4DU"/>
+                            </mask>
+                        </variation>
                     </view>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="DFq-Vw-M8j" secondAttribute="trailing" constant="9" id="I3l-jN-Yjc"/>
                 <constraint firstAttribute="bottom" secondItem="DFq-Vw-M8j" secondAttribute="bottom" constant="8" id="WGF-zo-yZm"/>
@@ -72,6 +79,12 @@
                 <constraint firstItem="DFq-Vw-M8j" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" constant="8" id="bhQ-Z6-aPz"/>
             </constraints>
             <size key="customSize" width="80" height="216"/>
+            <connections>
+                <outlet property="avrageTemp" destination="0zD-v7-fZS" id="68Q-gi-Dni"/>
+                <outlet property="bgView" destination="DFq-Vw-M8j" id="HKg-eL-HY0"/>
+                <outlet property="dateLbl" destination="pfU-y0-HOU" id="86u-cB-48e"/>
+                <outlet property="img" destination="pna-sb-C8X" id="ldr-Fa-OBw"/>
+            </connections>
             <point key="canvasLocation" x="-12.213740458015266" y="77.464788732394368"/>
         </collectionViewCell>
     </objects>

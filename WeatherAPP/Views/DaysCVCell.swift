@@ -10,19 +10,24 @@ import UIKit
 class DaysCVCell: UICollectionViewCell {
     
     @IBOutlet weak var img: UIImageView!
-    @IBOutlet weak var date: UILabel!
-    @IBOutlet weak var condition: UILabel!
+    @IBOutlet weak var dateLbl: UILabel!
+    @IBOutlet weak var avrageTemp: UILabel!
+    @IBOutlet weak var bgView: UIView!
+
     
-    var day: Forecastday? {
+    var hour: Hour? {
         didSet {
             img.image = UIImage(named: "rain_cloud_sun")
-//            date.text = day?.day.
+            let epochTime: TimeInterval = TimeInterval(hour?.time_epoch ?? 0 )
+            let date = Date(timeIntervalSince1970: epochTime)
+            dateLbl.text = date.formattedHourString()
+            avrageTemp.text = String(hour?.temp_c ?? 0) + "°"
         }
     }
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        bgView.layer.cornerRadius = bgView.bounds.width / 2
     }
 
 }

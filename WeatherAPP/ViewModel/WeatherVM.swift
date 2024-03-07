@@ -13,6 +13,7 @@ class WeatherVM: NSObject {
     private var locationManager = CLLocationManager()
     var currentWeather: CurrentWeatherResponse?
     var locationUpdateHandler: ((String) -> Void)?
+    var errorUpdateHandler: ((String) -> Void)?
     
     override init() {
         super.init()
@@ -27,11 +28,11 @@ class WeatherVM: NSObject {
     }
     
     func numberOfItems() -> Int {
-        return currentWeather?.forecast?.forecastday?.count ?? 0
+        return currentWeather?.forecast?.forecastday?.first?.hour?.count ?? 0
     }
     
-    func item(at index: Int) -> Forecastday? {
-        return currentWeather?.forecast?.forecastday?[index]
+    func item(at index: Int) -> Hour? {
+        return currentWeather?.forecast?.forecastday?.first?.hour?[index]
     }
 }
 
@@ -62,11 +63,13 @@ extension WeatherVM: CLLocationManagerDelegate {
         
         CLGeocoder().reverseGeocodeLocation(location) { (placemarks, error) in
             if let error = error {
-                print("Reverse geocoding error: \(error.localizedDescription)")
+                self.errorUpdateHandler?("Reverse geocoding error: \(error.localizedDescription)")
+                print("Reverse geocoding error: \(error)")
                 return
             }
             
             guard let placemark = placemarks?.first, let cityName = placemark.locality else {
+                self.errorUpdateHandler?("City name not found")
                 print("City name not found")
                 return
             }
@@ -75,6 +78,7 @@ extension WeatherVM: CLLocationManagerDelegate {
     }
     
     func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
-        print("Location manager error: \(error.localizedDescription)")
+        self.errorUpdateHandler?("Location manager error: \(error.localizedDescription)")
+        print("Location manager error: \(error)")
     }
 }

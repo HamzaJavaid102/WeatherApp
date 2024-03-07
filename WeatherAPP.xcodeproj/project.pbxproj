@@ -30,6 +30,8 @@
 		BB98E7C92B9A2F5E002E74EB /* Forecast.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB98E7C42B9A2F5E002E74EB /* Forecast.swift */; };
 		BB98E7CD2B9A3362002E74EB /* DaysCVCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = BB98E7CC2B9A3362002E74EB /* DaysCVCell.xib */; };
 		BB98E7CE2B9A3362002E74EB /* DaysCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB98E7CB2B9A3362002E74EB /* DaysCVCell.swift */; };
+		BB98E7D02B9A3B91002E74EB /* DateExtenson.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB98E7CF2B9A3B91002E74EB /* DateExtenson.swift */; };
+		BB98E7D22B9A471C002E74EB /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB98E7D12B9A471C002E74EB /* ViewControllerExtension.swift */; };
 		BBAE2C5C2B99804F0029971F /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAE2C542B99804E0029971F /* EndPoint.swift */; };
 		BBAE2C5D2B99804F0029971F /* BaseNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAE2C552B99804E0029971F /* BaseNetwork.swift */; };
 		BBAE2C5E2B99804F0029971F /* MultipartFormDataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAE2C562B99804E0029971F /* MultipartFormDataRequest.swift */; };
@@ -99,6 +101,8 @@
 		BB98E7C42B9A2F5E002E74EB /* Forecast.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Forecast.swift; sourceTree = "<group>"; };
 		BB98E7CB2B9A3362002E74EB /* DaysCVCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DaysCVCell.swift; sourceTree = "<group>"; };
 		BB98E7CC2B9A3362002E74EB /* DaysCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DaysCVCell.xib; sourceTree = "<group>"; };
+		BB98E7CF2B9A3B91002E74EB /* DateExtenson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtenson.swift; sourceTree = "<group>"; };
+		BB98E7D12B9A471C002E74EB /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
 		BBAE2C542B99804E0029971F /* EndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		BBAE2C552B99804E0029971F /* BaseNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNetwork.swift; sourceTree = "<group>"; };
 		BBAE2C562B99804E0029971F /* MultipartFormDataRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipartFormDataRequest.swift; sourceTree = "<group>"; };
@@ -205,6 +209,8 @@
 				BB98E7B22B99E905002E74EB /* JSONEncoder.swift */,
 				BBC012902B99988000E44576 /* UIView+Extension.swift */,
 				BBAE2C682B9981FB0029971F /* JSONDecoder.swift */,
+				BB98E7CF2B9A3B91002E74EB /* DateExtenson.swift */,
+				BB98E7D12B9A471C002E74EB /* ViewControllerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -600,8 +606,10 @@
 				BBC012912B99988000E44576 /* UIView+Extension.swift in Sources */,
 				BBAE2C5D2B99804F0029971F /* BaseNetwork.swift in Sources */,
 				BB98E7C82B9A2F5E002E74EB /* Astro.swift in Sources */,
+				BB98E7D02B9A3B91002E74EB /* DateExtenson.swift in Sources */,
 				BB98E7AF2B99E89F002E74EB /* BaseNetworkRequestable.swift in Sources */,
 				BB98E7B52B99E935002E74EB /* Dictionary.swift in Sources */,
+				BB98E7D22B9A471C002E74EB /* ViewControllerExtension.swift in Sources */,
 				BBE8CB222B9837120087D612 /* AppDelegate.swift in Sources */,
 				BB4D18412B9990D40040D028 /* TodayWeatherVC.swift in Sources */,
 				BB98E7B32B99E905002E74EB /* JSONEncoder.swift in Sources */,
