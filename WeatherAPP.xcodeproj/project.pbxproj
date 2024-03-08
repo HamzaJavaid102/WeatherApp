@@ -32,6 +32,7 @@
 		BB98E7CE2B9A3362002E74EB /* DaysCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB98E7CB2B9A3362002E74EB /* DaysCVCell.swift */; };
 		BB98E7D02B9A3B91002E74EB /* DateExtenson.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB98E7CF2B9A3B91002E74EB /* DateExtenson.swift */; };
 		BB98E7D22B9A471C002E74EB /* ViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB98E7D12B9A471C002E74EB /* ViewControllerExtension.swift */; };
+		BB98E7D52B9AFC6C002E74EB /* WeatherIconHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = BB98E7D42B9AFC6C002E74EB /* WeatherIconHelper.swift */; };
 		BBAE2C5C2B99804F0029971F /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAE2C542B99804E0029971F /* EndPoint.swift */; };
 		BBAE2C5D2B99804F0029971F /* BaseNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAE2C552B99804E0029971F /* BaseNetwork.swift */; };
 		BBAE2C5E2B99804F0029971F /* MultipartFormDataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BBAE2C562B99804E0029971F /* MultipartFormDataRequest.swift */; };
@@ -103,6 +104,7 @@
 		BB98E7CC2B9A3362002E74EB /* DaysCVCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DaysCVCell.xib; sourceTree = "<group>"; };
 		BB98E7CF2B9A3B91002E74EB /* DateExtenson.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtenson.swift; sourceTree = "<group>"; };
 		BB98E7D12B9A471C002E74EB /* ViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewControllerExtension.swift; sourceTree = "<group>"; };
+		BB98E7D42B9AFC6C002E74EB /* WeatherIconHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherIconHelper.swift; sourceTree = "<group>"; };
 		BBAE2C542B99804E0029971F /* EndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		BBAE2C552B99804E0029971F /* BaseNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseNetwork.swift; sourceTree = "<group>"; };
 		BBAE2C562B99804E0029971F /* MultipartFormDataRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MultipartFormDataRequest.swift; sourceTree = "<group>"; };
@@ -198,6 +200,7 @@
 			isa = PBXGroup;
 			children = (
 				BBAE2C652B9980D00029971F /* AppConstants.swift */,
+				BB98E7D42B9AFC6C002E74EB /* WeatherIconHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -656,6 +659,7 @@
 				BB98E7B12B99E89F002E74EB /* ConfigureNibView.swift in Sources */,
 				BB98E7B72B99E96E002E74EB /* CurrentWeatherRequest.swift in Sources */,
 				BBAE2C5F2B99804F0029971F /* Result.swift in Sources */,
+				BB98E7D52B9AFC6C002E74EB /* WeatherIconHelper.swift in Sources */,
 				BBAE2C662B9980D00029971F /* AppConstants.swift in Sources */,
 				BBAE2C602B99804F0029971F /* API.swift in Sources */,
 				BBE8CB242B9837120087D612 /* SceneDelegate.swift in Sources */,

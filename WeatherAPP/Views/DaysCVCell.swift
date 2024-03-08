@@ -17,7 +17,8 @@ class DaysCVCell: UICollectionViewCell {
     
     var hour: Hour? {
         didSet {
-            img.image = UIImage(named: "rain_cloud_sun")
+            let dayOrNight: DayNight = (hour?.is_day ?? 1) == 1 ? .day : .night
+            img.image = WeatherIconHelper.getWeatherIcon(forCode: hour?.condition?.code ?? 0, dayNight:  dayOrNight)
             let epochTime: TimeInterval = TimeInterval(hour?.time_epoch ?? 0 )
             let date = Date(timeIntervalSince1970: epochTime)
             dateLbl.text = date.formattedHourString()

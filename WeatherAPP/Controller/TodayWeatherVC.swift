@@ -69,7 +69,6 @@ class TodayWeatherVC: UIViewController {
         cityNameLbl.text = currentWeather?.location?.name ?? "NA"
         tempLbl.text = "\(currentWeather?.current?.temp_c ?? 0.0)°"
         conditionLbl.text = currentWeather?.current?.condition?.text ?? ""
-        weatherImg.kf.setImage(with: URL(string: API.baseUrl + (currentWeather?.current?.condition?.icon ?? "")), placeholder: UIImage(named: "rain_cloud_sun"))
         humidtyLbl.text = "Humidty: " + String(currentWeather?.current?.humidity ?? 0)
         feeelsLikeLbl.text = "FeelsLike: " + String(currentWeather?.current?.feelslike_c ?? 0) + "°"
         maxTempLbl.text = "Max: " + String(currentWeather?.forecast?.forecastday?.first?.day?.maxtemp_c ?? 0) + "°"
@@ -77,6 +76,9 @@ class TodayWeatherVC: UIViewController {
         let epochTime: TimeInterval = TimeInterval(currentWeather?.current?.last_updated_epoch ?? 0 )
         let date = Date(timeIntervalSince1970: epochTime)
         dateLbl.text = date.formattedDateString()
+        let dayOrNight: DayNight = (currentWeather?.current?.is_day ?? 1) == 1 ? .day : .night
+        let weatherIcon = WeatherIconHelper.getWeatherIcon(forCode: currentWeather?.current?.condition?.code ?? 0, dayNight: dayOrNight)
+        weatherImg.image = weatherIcon
         collectionView.reloadData()
     }
     
